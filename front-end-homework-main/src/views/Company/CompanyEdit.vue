@@ -22,11 +22,14 @@
                 </div>
             </div>
             <div class="field">
-                <label class="label">subsPerEmployee</label>
+                <label class="label">Subscriptions Per Employee</label>
                 <div class="control">
                     <input type="text" v-model="editCompanyForm.subsPerEmployee">
                 </div>
             </div>
+
+            <p>
+            <button v-on:click.once="updateCompany">Update</button></p>
         </form>
     </div>
 </template>
@@ -38,13 +41,7 @@ export default {
     name: 'CompanyEdit',
     data() {
         return {
-            company: {
-                id: "",
-                name: "",
-                domain: "",
-                numberOfEmployees: "",
-                subscriptionsPerEmployee: ""
-            },
+            companyId: "",
             editCompanyForm: {
                 id: "",
                 companyName: "",
@@ -56,7 +53,7 @@ export default {
     },
     created: function() {
             // fetches all companies when component is created
-            CompanyService.getById(company.id)
+            CompanyService.getById(companyId)
             .then(results => {
                 //  JSON responses automatically parsed
                 this.editCompanyForm = results.data;
@@ -68,6 +65,11 @@ export default {
             })
 
     },
+    methods: {
+        updateCompany() {
+            alert("Updating Company Info For: " + editCompanyForm.companyName);
+        }
+    }
    
 }
 </script>

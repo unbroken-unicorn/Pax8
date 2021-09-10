@@ -44,7 +44,7 @@ export default {
             CompanyService.getAll()
             .then(results => {
                 //  JSON responses automatically parsed
-                this.companies = results.data;
+                this.companies = results;
                 console.log('Getting companies');
                 console.dir(this.companies);
             })

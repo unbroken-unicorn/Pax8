@@ -6,6 +6,9 @@ export default {
 
 function getAll() {
   console.log("In getAll()");
+  
+  var resolvedCompanies = Promise.resolve(fakeCompanies);
+  console.dir(resolvedCompanies);
   return Promise.resolve(fakeCompanies);
 }
 
@@ -44,3 +47,8 @@ const fakeCompanies = [
     subscriptionsPerEmployee: 2,
   },
 ];
+
+
+
+
+
