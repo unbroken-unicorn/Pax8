@@ -3,7 +3,9 @@ export default {
   getById,
 };
 
+
 function getAll() {
+  console.log("In getAll()");
   return Promise.resolve(fakeCompanies);
 }
 

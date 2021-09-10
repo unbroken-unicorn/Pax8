@@ -11,5 +11,10 @@ export default new Router({
       name: 'home',
       component: Home,
     },
+    {
+      path: '/companylist',
+      name: 'CompanyList',
+      component: () => import('./views/Company/CompanyList.vue')
+    },
   ],
 });
