@@ -16,5 +16,15 @@ export default new Router({
       name: 'CompanyList',
       component: () => import('./views/Company/CompanyList.vue')
     },
+    // {
+    //   path: '/companyedit',
+    //   name: 'CompanyEdit',
+    //   component: () => import('./views/Company/CompanyEdit.vue')
+    // },
+    {
+      path: '/companyview',
+      name: 'CompanyView',
+      component: () => import('./views/Company/CompanyView.vue')
+    },
   ],
 });

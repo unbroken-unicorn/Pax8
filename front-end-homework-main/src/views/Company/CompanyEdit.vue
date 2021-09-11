@@ -56,8 +56,8 @@ export default {
             CompanyService.getById(companyId)
             .then(results => {
                 //  JSON responses automatically parsed
-                this.editCompanyForm = results.data;
-                console.log('Getting company');
+                this.editCompanyForm = results;
+                console.log('Editing company');
                 console.dir(this.editCompanyForm);
             })
             .catch(e => {

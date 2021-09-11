@@ -13,7 +13,7 @@
             <tbody>
                 <tr v-for="company in companies" v-bind:key="company.id">
                     <th scope="row">{{company.id}}</th>
-                    <td>{{company.name}}</td>
+                    <td><a href="" v-on:click.once="ViewCompany">{{company.name}}</a></td>
                     <td><button v-on:click.once="EditCompany">Edit</button></td>
                 </tr>
             </tbody>
@@ -25,6 +25,7 @@
 
 <script>
 import CompanyService from "../../services/CompanyService";
+// import CompanyEdit from "./services/CompanyEdit";
 
 export default {
    name: 'CompanyList',
@@ -56,6 +57,11 @@ export default {
     methods: {
         EditCompany() {
             console.log('In Edit Company');
+            // this.$router.push('/companyedit');
+        },
+        ViewCompany() {
+            console.log('In View Company');
+            this.$router.push({name:'CompanyView', params: {companyId: this.companies.id}});
         }
     }
 }
