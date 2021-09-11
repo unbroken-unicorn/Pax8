@@ -53,7 +53,8 @@ export default {
     },
     created: function() {
             // fetches all companies when component is created
-            CompanyService.getById(companyId)
+            // CompanyService.getById(companyId)
+            CompanyService.getById(1)
             .then(results => {
                 //  JSON responses automatically parsed
                 this.editCompanyForm = results;
@@ -67,7 +68,7 @@ export default {
     },
     methods: {
         updateCompany() {
-            alert("Updating Company Info For: " + editCompanyForm.companyName);
+             this.$alert("Updating Company Info For: " + editCompanyForm.companyName + ": " + editCompanyForm.domain + " " + editCompanyForm.numOfEmployees + " " + editCompanyForm.subsPerEmployee);
         }
     }
    

@@ -2,12 +2,12 @@
     <div>
         <h1>Company Info</h1>
 
-        <p><strong>Name: {{ company.companyName }} ({{ company.id }})</strong></p>
+        <p><strong>Name: {{ company.name }} ({{ company.id }})</strong></p>
 
         <p>
-            <strong>Domain:</strong> {{ company.domain }}><br>
-            <strong># Employees:</strong> {{ company.domain }}><br>
-            <strong># Subscriptions/Employee:</strong> {{ company.domain }}><br>
+            <strong>Domain:</strong> {{ company.domain }}<br>
+            <strong># Employees:</strong> {{ company.numberOfEmployees }}<br>
+            <strong># Subscriptions/Employee:</strong> {{ company.subscriptionsPerEmployee }}<br>
         </p>
 
     </div>
@@ -23,10 +23,10 @@ export default {
             companyId: "",
             company: {
                 id: "",
-                companyName: "",
+                name: "",
                 domain: "",
-                numOfEmployees: "",
-                subsPerEmployee: ""
+                numberOfEmployees: "",
+                subscriptionsPerEmployee: ""
             }
         };
     },
